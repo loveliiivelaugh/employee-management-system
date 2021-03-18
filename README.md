@@ -1,3 +1,20 @@
+# Employee Management System
+### React MaterialUI Firebase
+
+Instructions and details coming soon.. I need to commit more so I am starting with this will update frequently.
+
+Live URL coming sooon!
+
+
+
+
+
+
+
+
+
+
+-----------------------------
 
 ## 👉 Get Started
 Install dependencies
