@@ -6,6 +6,14 @@ Instructions and details coming soon.. I need to commit more so I am starting wi
 Live URL coming sooon!
 
 
+### to dos
+1. Update all forms to reflect dataa required in tables
+2. Deploy a live site
+3. Set up cd/ci
+4. update styling
+5. lock auth so only the 3 profiles can access (Admin, HR, Employee)
+6. Update landing page to SignInSide landing page
+
 
 
 
