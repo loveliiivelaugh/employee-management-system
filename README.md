@@ -3,7 +3,13 @@
 
 Instructions and details coming soon.. I need to commit more so I am starting with this will update frequently.
 
-Live URL coming sooon!
+~~Live URL coming sooon!~~
+
+Live URL ---> https://fire-react-employee-management.netlify.app
+
+Deployed using Netlify
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ba146e5e-ac58-4079-958b-6b9eb03cec80/deploy-status)](https://app.netlify.com/sites/fire-react-employee-management/deploys)
 
 Inspiration came from this repo --> https://github.com/fenil29/employee-management-system-frontend-react
 
