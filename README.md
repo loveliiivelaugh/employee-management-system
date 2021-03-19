@@ -15,14 +15,18 @@ Inspiration came from this repo --> https://github.com/fenil29/employee-manageme
 
 
 ### to dos
-1. Update all forms to reflect dataa required in tables
-2. Deploy a live site
-3. Set up cd/ci
+1. ~~Update all forms to reflect dataa required in tables~~
+2. ~~Deploy a live site~~
+3. ~~Set up cd/ci~~
 4. update styling
-5. lock auth so only the 3 profiles can access (Admin, HR, Employee)
-6. Update landing page to SignInSide landing page
+5. ~~lock auth so only the 3 profiles can access (Admin, HR, Employee)~~
+
+- Allow for new users to be created. Build welcome screen with mock welcome wizard/flow.
+
+6. ~~Update landing page to SignInSide landing page~~
 7. ~~Hide navbar on landing age, and show on rest of site~~
 ---> *SOLVED* reference: https://docs.divjoy.com/Hide-Navbar-and-Footer-on-some-pages-4b6697d1b70a410884f5b42a7b1ecb20
+8. Update all forms to include enchanced UI by featuring MUI custom pickers etc..
 
 
 
