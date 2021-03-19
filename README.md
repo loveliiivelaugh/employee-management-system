@@ -21,7 +21,7 @@ Inspiration came from this repo --> https://github.com/fenil29/employee-manageme
 4. update styling
 5. lock auth so only the 3 profiles can access (Admin, HR, Employee)
 6. Update landing page to SignInSide landing page
-7. Hide navbar on landing age, and show on rest of site
+7. ~~Hide navbar on landing age, and show on rest of site~~
 ---> *SOLVED* reference: https://docs.divjoy.com/Hide-Navbar-and-Footer-on-some-pages-4b6697d1b70a410884f5b42a7b1ecb20
 
 
