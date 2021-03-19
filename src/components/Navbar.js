@@ -79,7 +79,7 @@ function Navbar(props) {
             </Hidden>
             <Hidden xsDown={true} implementation="css">
               {!auth.user && (
-                <Button color="inherit" component={Link} to="/auth/signin">
+                <Button color="inherit" component={Link} to="/">
                   Sign in
                 </Button>
               )}
@@ -162,7 +162,7 @@ function Navbar(props) {
           onClick={() => setDrawerOpen(false)}
         >
           {!auth.user && (
-            <ListItem button={true} component={Link} to="/auth/signin">
+            <ListItem button={true} component={Link} to="/">
               <ListItemText>Sign in</ListItemText>
             </ListItem>
           )}

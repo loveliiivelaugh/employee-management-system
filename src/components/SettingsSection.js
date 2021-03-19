@@ -80,7 +80,9 @@ function SettingsSection(props) {
             <SettingsPassword onStatus={handleStatus} />
           )}
 
-          {section === "billing" && <SettingsBilling onStatus={handleStatus} />}
+          {section === "billing" && <SettingsGeneral onStatus={handleStatus} />
+           //? bypassing billing -- rerouting to general for now --> option to add later
+          }
         </Container>
       </Box>
     </Section>

@@ -60,6 +60,7 @@ function SettingsGeneral(props) {
             error={errors.name ? true : false}
             helperText={errors.name && errors.name.message}
             fullWidth={true}
+            disabled={true}
             inputRef={register({
               required: "Please enter your name",
             })}
@@ -76,6 +77,7 @@ function SettingsGeneral(props) {
             error={errors.email ? true : false}
             helperText={errors.email && errors.email.message}
             fullWidth={true}
+            disabled={true}
             inputRef={register({
               required: "Please enter your email",
             })}

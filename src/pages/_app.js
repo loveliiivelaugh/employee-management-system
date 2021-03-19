@@ -29,7 +29,7 @@ function App(props) {
 
               <Route exact path="/purchase/:plan" component={PurchasePage} />
 
-              <Route exact path="/auth/:type" component={AuthPage} />
+              <Route exact path="/auth/:type" component={IndexPage} />
 
               <Route
                 exact

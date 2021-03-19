@@ -62,6 +62,7 @@ function SettingsPassword(props) {
             error={errors.pass ? true : false}
             helperText={errors.pass && errors.pass.message}
             fullWidth={true}
+            disabled={true}
             inputRef={register({
               required: "Please enter a password",
             })}
@@ -77,6 +78,7 @@ function SettingsPassword(props) {
             error={errors.confirmPass ? true : false}
             helperText={errors.confirmPass && errors.confirmPass.message}
             fullWidth={true}
+            disabled={true}
             inputRef={register({
               required: "Please enter your new password again",
               validate: (value) => {

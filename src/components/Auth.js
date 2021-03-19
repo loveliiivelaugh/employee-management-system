@@ -56,7 +56,10 @@ function Auth(props) {
             </>
           )}
 
-          <AuthFooter type={props.type} typeValues={props.typeValues} />
+          {/***
+           * if want to add credential management options *** uncomment ***
+          <AuthFooter type={props.type} typeValues={props.typeValues} /> 
+          */}
         </>
       )}
     </>
