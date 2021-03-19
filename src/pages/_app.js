@@ -21,11 +21,12 @@ function App(props) {
       <AuthProvider>
         <Router>
           <>
+          {/* 
             <Navbar
               color="default"
               logo="https://uploads.divjoy.com/logo.svg"
               logoInverted="https://uploads.divjoy.com/logo-white.svg"
-            />
+            /> */}
 
             <Switch>
               <Route exact path="/" component={IndexPage} />
@@ -50,7 +51,7 @@ function App(props) {
 
               <Route component={NotFoundPage} />
             </Switch>
-
+{/* 
             <Footer
               bgColor="light"
               size="normal"
@@ -61,7 +62,7 @@ function App(props) {
               logo="https://uploads.divjoy.com/logo.svg"
               logoInverted="https://uploads.divjoy.com/logo-white.svg"
               sticky={true}
-            />
+            /> */}
           </>
         </Router>
       </AuthProvider>
