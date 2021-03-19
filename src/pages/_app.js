@@ -16,18 +16,23 @@ import { AuthProvider } from "./../util/auth.js";
 import { ThemeProvider } from "./../util/theme.js";
 
 function App(props) {
+  const [isLandingPage, setIsLadndingPage] = React.useState(false);
+  React.useEffect(() => {
+    if ( window.location.pathname === "/" ) { setIsLadndingPage(true); }
+  }, []);
+  console.info(window.location.pathname, isLandingPage)
   return (
     <ThemeProvider>
       <AuthProvider>
         <Router>
           <>
-          {/* 
-            <Navbar
-              color="default"
-              logo="https://uploads.divjoy.com/logo.svg"
-              logoInverted="https://uploads.divjoy.com/logo-white.svg"
-            /> */}
-
+            {!isLandingPage &&
+              <Navbar
+                color="default"
+                logo="https://uploads.divjoy.com/logo.svg"
+                logoInverted="https://uploads.divjoy.com/logo-white.svg"
+              />
+            }
             <Switch>
               <Route exact path="/" component={IndexPage} />
 
@@ -51,7 +56,7 @@ function App(props) {
 
               <Route component={NotFoundPage} />
             </Switch>
-{/* 
+            {/* 
             <Footer
               bgColor="light"
               size="normal"
@@ -62,7 +67,8 @@ function App(props) {
               logo="https://uploads.divjoy.com/logo.svg"
               logoInverted="https://uploads.divjoy.com/logo-white.svg"
               sticky={true}
-            /> */}
+            /> 
+            */}
           </>
         </Router>
       </AuthProvider>
