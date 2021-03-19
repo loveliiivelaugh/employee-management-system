@@ -78,52 +78,61 @@ function EditProjectBiddingModal(props) {
         )}
 
         <form onSubmit={handleSubmit(onSubmit)}>
-
-            <Grid item={true} xs={12}> 
-              <TextField
-                variant="outlined"
-                select
-                label="Label(s)"
-                // value={label}
-                // onChange={event => setFormDetails({ ...formDetails, [label]: event.target.value})}
-                defaultValue={projectBiddingData && projectBiddingData.name}
-                error={errors.name ? true : false}
-                helperText={errors.name && errors.name.message}
-                fullWidth={true}
-                autoFocus={true}
-                inputRef={register}
-              >
-                {[
-                  { label: "vanilla" }, 
-                  { label: "node" }, 
-                  { label: "noSql" }, 
-                  { label: "sql" }, 
-                  { label: "react" }, 
-                  { label: "python" }, 
-                  { label: "shopify" }, 
-                  { label: "wordpress" }
-                ].map((option, i) => (
-                  <MenuItem key={i} value={option.label}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </Grid>
           <Grid container={true} spacing={3}>
             <Grid item={true} xs={12}>
               <TextField
                 variant="outlined"
                 type="text"
-                label="Title"
+                label="Project Title"
                 name="title"
                 defaultValue={projectBiddingData && projectBiddingData.name}
                 error={errors.name ? true : false}
                 helperText={errors.name && errors.name.message}
                 fullWidth={true}
                 autoFocus={true}
-                inputRef={register({
-                  required: "Please enter a title",
-                })}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Portal"
+                name="portal"
+                defaultValue={projectBiddingData && projectBiddingData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Project URL"
+                name="url"
+                defaultValue={projectBiddingData && projectBiddingData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Estimated Time"
+                name="estTime"
+                defaultValue={projectBiddingData && projectBiddingData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
               />
             </Grid>
             <Grid item={true} xs={12}>

@@ -53,9 +53,51 @@ export default function EmployeeTables(props) {
             .filter(role => role.section === props.activeSection.name)
             .map((row) => (
               <TableRow key={row.id}>
-                <TableCell>{row.title ? row.title : "--"}</TableCell>
-                <TableCell>{row.company ? row.company : "--"}</TableCell>
-                <TableCell>{row.name ? row.name : "--"}</TableCell>
+                {/* HR/PERSONAL INFORMATION */}
+                {row.section === "Personal Information" &&
+                <>
+                  <TableCell>{row.firstName && row.firstName}</TableCell>
+                  <TableCell>{row.middleName && row.middleName}</TableCell>
+                  <TableCell>{row.lastName && row.lastName}</TableCell>
+                  <TableCell>{row.gender && row.gender}</TableCell>
+                  <TableCell>{row.contact && row.contact}</TableCell>
+                  <TableCell>{row.email && row.email}</TableCell>
+                  <TableCell>{row.pan && row.pan}</TableCell>
+                </>
+                }
+                {/* HR/EDUCATION */}
+                {row.section === "Education" &&
+                <>
+                  <TableCell>{row.school && row.school}</TableCell>
+                  <TableCell>{row.degree && row.degree}</TableCell>
+                  <TableCell>{row.grade && row.grade}</TableCell>
+                </>
+                }
+                {/* HR/DEPENDENTS */}
+                {row.section === "Dependents" &&
+                <>
+                  <TableCell>{row.name && row.name}</TableCell>
+                  <TableCell>{row.relationship && row.relationship}</TableCell>
+                  <TableCell>{row.dob && row.dob}</TableCell>
+                </>
+                }
+                {/* HR/WORK EXPERIENCE */}
+                {row.section === "WorkExp" &&
+                <>
+                  <TableCell>{row.company && row.company}</TableCell>
+                  <TableCell>{row.designation && row.designation}</TableCell>
+                  <TableCell>{row.fromDate && row.fromDate}</TableCell>
+                </>
+                }
+                {/* HR/LEAVE APPLICATION */}
+                {row.section === "Leave Application" &&
+                <>
+                  <TableCell>{row.leaveType && row.leaveType}</TableCell>
+                  <TableCell>{row.fromDate && row.fromDate}</TableCell>
+                  <TableCell>{row.toDate && row.toDate}</TableCell>
+                  <TableCell>{row.leaveReason && row.leaveReason}</TableCell>
+                </>
+                }
               </TableRow>
             )) :
             "Sorry, no data available at this time."

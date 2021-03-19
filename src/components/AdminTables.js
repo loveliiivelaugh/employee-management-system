@@ -53,9 +53,43 @@ export default function AdminTables(props) {
             .filter(role => role.section === props.activeSection.name)
             .map((row) => (
               <TableRow key={row.id}>
-                <TableCell>{row.title ? row.title : "--"}</TableCell>
-                <TableCell>{row.company ? row.company : "--"}</TableCell>
-                <TableCell>{row.name ? row.name : "--"}</TableCell>
+                {/* ADMIN/ROLE */}
+                {row.section === "Role" &&
+                <>
+                  <TableCell>{row.company && row.company}</TableCell>
+                  <TableCell>{row.role && row.role}</TableCell>
+                </>
+                }
+                {/* ADMIN/POSITION */}
+                {row.section === "Position" &&
+                <>
+                  <TableCell>{row.company && row.company}</TableCell>
+                  <TableCell>{row.position && row.position}</TableCell>
+                </>
+                }
+                {/* ADMIN/DEPARTMENT */}
+                {row.section === "Department" &&
+                <>
+                  <TableCell>{row.company && row.company}</TableCell>
+                  <TableCell>{row.department && row.department}</TableCell>
+                </>
+                }
+                {/* ADMIN/PROJECT BIDDING */}
+                {row.section === "Project Bidding" &&
+                <>
+                  <TableCell>{row.title && row.title}</TableCell>
+                  <TableCell>{row.portal && row.portal}</TableCell>
+                  <TableCell>{row.url && row.url}</TableCell>
+                  <TableCell>{row.estTime && row.estTime}</TableCell>
+                </>
+                }
+                {/* ADMIN/PORTAL MASTER */}
+                {row.section === "Portal Master" &&
+                <>
+                  <TableCell>{row.portal && row.portal}</TableCell>
+                  <TableCell>{row.status && row.status}</TableCell>
+                </>
+                }
               </TableRow>
             )) :
             "Sorry, no data available at this time."

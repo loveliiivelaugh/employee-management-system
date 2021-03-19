@@ -111,16 +111,42 @@ function EditLeaveApplicationsModal(props) {
               <TextField
                 variant="outlined"
                 type="text"
-                label="LeaveApplications"
-                name="name"
+                label="From Date"
+                name="fromDate"
                 defaultValue={leaveApplicationsData && leaveApplicationsData.name}
                 error={errors.name ? true : false}
                 helperText={errors.name && errors.name.message}
                 fullWidth={true}
                 autoFocus={true}
-                inputRef={register({
-                  required: "Please enter a name",
-                })}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="To Date"
+                name="toDate"
+                defaultValue={leaveApplicationsData && leaveApplicationsData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Reason for leaving"
+                name="leaveReason"
+                defaultValue={leaveApplicationsData && leaveApplicationsData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
               />
             </Grid>
             <Grid item={true} xs={12}>

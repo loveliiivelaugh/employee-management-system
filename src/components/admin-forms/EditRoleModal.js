@@ -82,8 +82,25 @@ function EditRoleModal(props) {
             <Grid item={true} xs={12}>
               <TextField
                 variant="outlined"
+                type="text"
+                label="Company"
+                name="company"
+                defaultValue={roleData && roleData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register({
+                  required: "Please enter a name",
+                })}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
                 select
-                label="Select your option"
+                label="Select your role"
+                name="role"
                 defaultValue={roleData && roleData.name}
                 error={errors.name ? true : false}
                 helperText={errors.name && errors.name.message}
@@ -106,22 +123,6 @@ function EditRoleModal(props) {
                   </MenuItem>
                 ))}
               </TextField>
-            </Grid>
-            <Grid item={true} xs={12}>
-              <TextField
-                variant="outlined"
-                type="text"
-                label="Role"
-                name="name"
-                defaultValue={roleData && roleData.name}
-                error={errors.name ? true : false}
-                helperText={errors.name && errors.name.message}
-                fullWidth={true}
-                autoFocus={true}
-                inputRef={register({
-                  required: "Please enter a name",
-                })}
-              />
             </Grid>
             <Grid item={true} xs={12}>
               <Button

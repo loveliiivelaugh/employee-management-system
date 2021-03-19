@@ -32,11 +32,11 @@ function EditPortalMasterModal(props) {
   // This will fetch PortalMaster if props.id is defined
   // Otherwise query does nothing and we assume
   // we are creating a new PortalMaster.
-  const { data: portalMasterData, status: PortalMasterStatus } = usePortalMaster(props.id);
+  const { data: portalMasterData, status: portalMasterStatus } = usePortalMaster(props.id);
 
   // If we are updating an existing PortalMaster
   // don't show modal until PortalMaster data is fetched.
-  if (props.id && PortalMasterStatus !== "success") {
+  if (props.id && portalMasterStatus !== "success") {
     return null;
   }
 
@@ -78,12 +78,28 @@ function EditPortalMasterModal(props) {
         )}
 
         <form onSubmit={handleSubmit(onSubmit)}>
-
+          <Grid container={true} spacing={3}>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Portal"
+                name="portal"
+                defaultValue={portalMasterData && portalMasterData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register({
+                  required: "Please enter a title",
+                })}
+              />
+            </Grid>
             <Grid item={true} xs={12}> 
               <TextField
                 variant="outlined"
                 select
-                label="Label(s)"
+                label="Status"
                 // value={label}
                 // onChange={event => setFormDetails({ ...formDetails, [label]: event.target.value})}
                 defaultValue={portalMasterData && portalMasterData.name}
@@ -108,23 +124,6 @@ function EditPortalMasterModal(props) {
                   </MenuItem>
                 ))}
               </TextField>
-            </Grid>
-          <Grid container={true} spacing={3}>
-            <Grid item={true} xs={12}>
-              <TextField
-                variant="outlined"
-                type="text"
-                label="Title"
-                name="title"
-                defaultValue={portalMasterData && portalMasterData.name}
-                error={errors.name ? true : false}
-                helperText={errors.name && errors.name.message}
-                fullWidth={true}
-                autoFocus={true}
-                inputRef={register({
-                  required: "Please enter a title",
-                })}
-              />
             </Grid>
             <Grid item={true} xs={12}>
               <Button

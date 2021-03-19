@@ -78,52 +78,103 @@ function EditInfoModal(props) {
         )}
 
         <form onSubmit={handleSubmit(onSubmit)}>
-
-            <Grid item={true} xs={12}> 
+          <Grid container={true} spacing={3}>
+            <Grid item={true} xs={12}>
               <TextField
                 variant="outlined"
-                select
-                label="Label(s)"
-                // value={label}
-                // onChange={event => setFormDetails({ ...formDetails, [label]: event.target.value})}
+                type="text"
+                label="First Name"
+                name="firstName"
                 defaultValue={infoData && infoData.name}
                 error={errors.name ? true : false}
                 helperText={errors.name && errors.name.message}
                 fullWidth={true}
                 autoFocus={true}
                 inputRef={register}
-              >
-                {[
-                  { label: "vanilla" }, 
-                  { label: "node" }, 
-                  { label: "noSql" }, 
-                  { label: "sql" }, 
-                  { label: "react" }, 
-                  { label: "python" }, 
-                  { label: "shopify" }, 
-                  { label: "wordpress" }
-                ].map((option, i) => (
-                  <MenuItem key={i} value={option.label}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
+              />
             </Grid>
-          <Grid container={true} spacing={3}>
             <Grid item={true} xs={12}>
               <TextField
                 variant="outlined"
                 type="text"
-                label="Title"
-                name="title"
+                label="Middle Name"
+                name="middleName"
                 defaultValue={infoData && infoData.name}
                 error={errors.name ? true : false}
                 helperText={errors.name && errors.name.message}
                 fullWidth={true}
                 autoFocus={true}
-                inputRef={register({
-                  required: "Please enter a title",
-                })}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Last Name"
+                name="lastName"
+                defaultValue={infoData && infoData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Gender"
+                name="gender"
+                defaultValue={infoData && infoData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Contact No"
+                name="contact"
+                defaultValue={infoData && infoData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Email"
+                name="email"
+                defaultValue={infoData && infoData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="PANcard"
+                name="pan"
+                defaultValue={infoData && infoData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
               />
             </Grid>
             <Grid item={true} xs={12}>

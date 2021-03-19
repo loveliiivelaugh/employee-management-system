@@ -11,7 +11,7 @@ import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { useAuth } from "../../util/auth.js";
 import { useForm } from "react-hook-form";
-import { useRole, updateRole, createRole } from "../../util/db.js";
+import { useCities, updateCities, createCities } from "../../util/db.js";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function EditRoleModal(props) {
+function EditCitiesModal(props) {
   const classes = useStyles();
 
   const auth = useAuth();
@@ -29,14 +29,14 @@ function EditRoleModal(props) {
 
   const { register, handleSubmit, errors } = useForm();
 
-  // This will fetch Role if props.id is defined
+  // This will fetch Cities if props.id is defined
   // Otherwise query does nothing and we assume
-  // we are creating a new Role.
-  const { data: roleData, status: roleStatus } = useRole(props.id);
+  // we are creating a new Cities.
+  const { data: citiesData, status: citiesStatus } = useCities(props.id);
 
-  // If we are updating an existing Role
-  // don't show modal until Role data is fetched.
-  if (props.id && roleStatus !== "success") {
+  // If we are updating an existing Cities
+  // don't show modal until Cities data is fetched.
+  if (props.id && citiesStatus !== "success") {
     return null;
   }
 
@@ -44,8 +44,8 @@ function EditRoleModal(props) {
     setPending(true);
 
     const query = props.id
-      ? updateRole(props.id, data)
-      : createRole({ owner: auth.user.id, section: props.section, ...data });
+      ? updateCities(props.id, data)
+      : createCities({ owner: auth.user.id, section: props.section, ...data });
 
     query
       .then(() => {
@@ -68,7 +68,7 @@ function EditRoleModal(props) {
       <DialogTitle>
         {props.id && <>Update</>}
         {!props.id && <>Create</>}
-        {` `}Role
+        {` `}Cities
       </DialogTitle>
       <DialogContent className={classes.content}>
         {formAlert && (
@@ -78,49 +78,47 @@ function EditRoleModal(props) {
         )}
 
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Grid container={true} spacing={3}>
+        <Grid container={true} spacing={3}>
             <Grid item={true} xs={12}>
               <TextField
                 variant="outlined"
-                select
-                label="Select your option"
-                defaultValue={roleData && roleData.name}
+                type="text"
+                label="Country"
+                name="country"
+                defaultValue={citiesData && citiesData.name}
                 error={errors.name ? true : false}
                 helperText={errors.name && errors.name.message}
                 fullWidth={true}
                 autoFocus={true}
                 inputRef={register}
-              >
-                {[
-                  { label: "vanilla" }, 
-                  { label: "node" }, 
-                  { label: "noSql" }, 
-                  { label: "sql" }, 
-                  { label: "react" }, 
-                  { label: "python" }, 
-                  { label: "shopify" }, 
-                  { label: "wordpress" }
-                ].map((option, i) => (
-                  <MenuItem key={i} value={option.label}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
+              />
             </Grid>
             <Grid item={true} xs={12}>
               <TextField
                 variant="outlined"
                 type="text"
-                label="Role"
-                name="name"
-                defaultValue={roleData && roleData.name}
+                label="State"
+                name="state"
+                defaultValue={citiesData && citiesData.name}
                 error={errors.name ? true : false}
                 helperText={errors.name && errors.name.message}
                 fullWidth={true}
                 autoFocus={true}
-                inputRef={register({
-                  required: "Please enter a name",
-                })}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="City"
+                name="city"
+                defaultValue={citiesData && citiesData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
               />
             </Grid>
             <Grid item={true} xs={12}>
@@ -143,4 +141,4 @@ function EditRoleModal(props) {
   );
 }
 
-export default EditRoleModal;
+export default EditCitiesModal;

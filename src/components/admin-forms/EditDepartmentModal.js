@@ -78,12 +78,26 @@ function EditDepartmentModal(props) {
         )}
 
         <form onSubmit={handleSubmit(onSubmit)}>
-
+          <Grid container={true} spacing={3}>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Company"
+                name="company"
+                defaultValue={departmentData && departmentData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
             <Grid item={true} xs={12}> 
               <TextField
                 variant="outlined"
                 select
-                label="Label(s)"
+                label="Departmenet"
                 // value={label}
                 // onChange={event => setFormDetails({ ...formDetails, [label]: event.target.value})}
                 defaultValue={departmentData && departmentData.name}
@@ -108,23 +122,6 @@ function EditDepartmentModal(props) {
                   </MenuItem>
                 ))}
               </TextField>
-            </Grid>
-          <Grid container={true} spacing={3}>
-            <Grid item={true} xs={12}>
-              <TextField
-                variant="outlined"
-                type="text"
-                label="Title"
-                name="title"
-                defaultValue={departmentData && departmentData.name}
-                error={errors.name ? true : false}
-                helperText={errors.name && errors.name.message}
-                fullWidth={true}
-                autoFocus={true}
-                inputRef={register({
-                  required: "Please enter a title",
-                })}
-              />
             </Grid>
             <Grid item={true} xs={12}>
               <Button
