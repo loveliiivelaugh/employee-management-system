@@ -432,34 +432,34 @@ export function deleteUsers(id) {
   return firestore.collection("global-users").doc(id).delete();
 }
 
-/**** SALARYS ****/
+/**** SALARies ****/
 /* Example query functions (modify to your needs) */
 
-// Fetch all Salarys by owner (hook)
-export function useSalarysByOwner(owner) {
+// Fetch all Salaries by owner (hook)
+export function useSalariesByOwner(owner) {
   return useQuery(
-    owner && firestore.collection("salarys").where("owner", "==", owner)
+    owner && firestore.collection("salaries").where("owner", "==", owner)
   );
 }
 
-// Fetch Salarys data
-export function useSalarys(id) {
-  return useQuery(id && firestore.collection("salarys").doc(id));
+// Fetch Salaries data
+export function useSalaries(id) {
+  return useQuery(id && firestore.collection("salaries").doc(id));
 }
 
-// Update an Salarys
-export function updateSalarys(id, data) {
-  return firestore.collection("salarys").doc(id).update(data);
+// Update an Salaries
+export function updateSalaries(id, data) {
+  return firestore.collection("salaries").doc(id).update(data);
 }
 
-// Create a new Salarys
-export function createSalarys(data) {
-  return firestore.collection("salarys").add(data);
+// Create a new Salaries
+export function createSalaries(data) {
+  return firestore.collection("salaries").add(data);
 }
 
-// Delete an Salarys
-export function deleteSalarys(id) {
-  return firestore.collection("salarys").doc(id).delete();
+// Delete an Salaries
+export function deleteSalaries(id) {
+  return firestore.collection("salaries").doc(id).delete();
 }
 
 /**** LEAVE APPLICATIONS ****/

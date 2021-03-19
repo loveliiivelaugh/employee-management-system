@@ -28,7 +28,7 @@ export default function Orders(props) {
   
   const [updatingProjectId, setUpdatingProjectId] = React.useState(null);
 
-  console.info(creatingProject, props.activeSection.name)
+  console.info(creatingProject, props.activeSection.name, props.data)
   return (
     <React.Fragment>
       <div className="display-flex">
@@ -55,12 +55,97 @@ export default function Orders(props) {
           {props.data &&
             props.data.length !== 0 ? 
             props.data
-            .filter(role => role.section === props.activeSection.name)
+            .filter(role => 
+              ( role.section === props.activeSection.name ))
             .map((row) => (
               <TableRow key={row.id}>
-                <TableCell>{row.title ? row.title : "--"}</TableCell>
-                <TableCell>{row.company ? row.company : "--"}</TableCell>
-                <TableCell>{row.name ? row.name : "--"}</TableCell>
+
+                {/* HR/USERS */}
+                {row.section === "User" &&
+                <>
+                  <TableCell>{row.company && row.company }</TableCell>
+                  <TableCell>{row.email && row.email }</TableCell>
+                  <TableCell>{row.accounts && row.accounts }</TableCell>
+                  <TableCell>{row.firstName && row.firstName }</TableCell>
+                  <TableCell>{row.middleName && row.middleName }</TableCell>
+                  <TableCell>{row.lastName && row.lastName }</TableCell>
+                  <TableCell>{row.number && row.number }</TableCell>
+                  <TableCell>{row.role && row.role }</TableCell>
+                  <TableCell>{row.position && row.position }</TableCell>
+                  <TableCell>{row.department && row.department }</TableCell>
+                  <TableCell>{row.jobDate && row.jobDate }</TableCell>
+                </>
+                }
+                {/* HR/SALARY */}
+                {row.section === "Salary" &&
+                <>
+                  <TableCell>{row.employeeName && row.employeeName}</TableCell>
+                  <TableCell>{row.salary && row.salary}</TableCell>
+                  <TableCell>{row.bankName && row.bankName}</TableCell>
+                  <TableCell>{row.accountNo && row.accountNo}</TableCell>
+                  <TableCell>{row.accountHolder && row.accountHolder}</TableCell>
+                  <TableCell>{row.ifsc && row.ifsc}</TableCell>
+                  <TableCell>{row.taxDeduction && row.taxDeduction}</TableCell>
+                </>
+                }
+                {/* HR/LEAVE APPLICATION */}
+                {row.section === "Leave Application" &&
+                <>
+                  <TableCell>{row.empCode && row.empCode}</TableCell>
+                  <TableCell>{row.name && row.name}</TableCell>
+                  <TableCell>{row.leaveType && row.leaveType}</TableCell>
+                  <TableCell>{row.from && row.from}</TableCell>
+                  <TableCell>{row.to && row.to}</TableCell>
+                  <TableCell>{row.ifsc && row.ifsc}</TableCell>
+                  <TableCell>{row.leaveReason && row.leaveReason}</TableCell>
+                  <TableCell>{row.status && row.status}</TableCell>
+                </>
+                }
+                {/* HR/COMPANY */}
+                {row.section === "Company" &&
+                <>
+                  <TableCell>{row.company && row.company}</TableCell>
+                  <TableCell>{row.address && row.address}</TableCell>
+                  <TableCell>{row.country && row.country}</TableCell>
+                  <TableCell>{row.state && row.state}</TableCell>
+                  <TableCell>{row.city && row.city}</TableCell>
+                  <TableCell>{row.postal && row.postal}</TableCell>
+                  <TableCell>{row.website && row.website}</TableCell>
+                  <TableCell>{row.email && row.email}</TableCell>
+                  <TableCell>{row.contactName && row.contactName}</TableCell>
+                  <TableCell>{row.contactNo && row.contactNo}</TableCell>
+                  <TableCell>{row.fax && row.fax}</TableCell>
+                  <TableCell>{row.panNo && row.panNo}</TableCell>
+                </>
+                }
+                {/* HR/ROLE */}
+                {row.section === "Role" &&
+                <>
+                  <TableCell>{row.company && row.company}</TableCell>
+                  <TableCell>{row.role && row.role}</TableCell>
+                </>
+                }
+                {/* HR/POSITION */}
+                {row.section === "Position" &&
+                <>
+                  <TableCell>{row.company && row.company}</TableCell>
+                  <TableCell>{row.position && row.position}</TableCell>
+                </>
+                }
+                {/* HR/DEPARTMENETS */}
+                {row.section === "Department" &&
+                <>
+                  <TableCell>{row.company && row.company}</TableCell>
+                  <TableCell>{row.position && row.position}</TableCell>
+                </>
+                }
+                {/* HR/COUNTRIES */}
+                {row.section === "Country" &&
+                <>
+                  <TableCell>{row.company && row.company}</TableCell>
+                  <TableCell>{row.position && row.position}</TableCell>
+                </>
+                }
               </TableRow>
             )) :
             "Sorry, no data available at this time."

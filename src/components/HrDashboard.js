@@ -8,7 +8,7 @@ import Grid from "@material-ui/core/Grid";
 import { useAuth } from "../util/auth.js";
 import { 
   useUsersByOwner, 
-  useSalarysByOwner, 
+  useSalariesByOwner, 
   useAllLeaveApplicationsByOwner, 
   useCompaniesByOwner,
   useAllRolesByOwner, 
@@ -30,10 +30,10 @@ const AdminDashboard = ({ sections }) => {
   } = useUsersByOwner(auth.user.uid);
 
   const { 
-    data: salarysData, 
-    status: salaryStatus, 
-    error: salaryError 
-  } = useSalarysByOwner(auth.user.uid);
+    data: salariesData, 
+    status: salarieStatus, 
+    error: salariesError 
+  } = useSalariesByOwner(auth.user.uid);
   
   const { 
     data: leaveApplicationsData, 
@@ -129,7 +129,7 @@ const AdminDashboard = ({ sections }) => {
           {activeSection.name === "Salary" &&
             <HrTables 
               activeSection={activeSection}
-              data={salarysData}
+              data={salariesData}
             />
           }
           {activeSection.name === "Leave Application" &&

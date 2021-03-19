@@ -5,6 +5,8 @@ Instructions and details coming soon.. I need to commit more so I am starting wi
 
 Live URL coming sooon!
 
+Inspiration came from this repo --> https://github.com/fenil29/employee-management-system-frontend-react
+
 
 ### to dos
 1. Update all forms to reflect dataa required in tables

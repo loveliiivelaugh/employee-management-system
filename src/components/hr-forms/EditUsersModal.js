@@ -11,7 +11,7 @@ import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { useAuth } from "../../util/auth.js";
 import { useForm } from "react-hook-form";
-import { useDepartment, updateDepartment, createDepartment } from "../../util/db.js";
+import { useUsers, updateUsers, createUsers } from "../../util/db.js";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function EditDepartmentModal(props) {
+function EditUsersModal(props) {
   const classes = useStyles();
 
   const auth = useAuth();
@@ -29,14 +29,14 @@ function EditDepartmentModal(props) {
   
   const { register, handleSubmit, errors } = useForm();
 
-  // This will fetch Department if props.id is defined
+  // This will fetch Users if props.id is defined
   // Otherwise query does nothing and we assume
-  // we are creating a new Department.
-  const { data: departmentData, status: departmentStatus } = useDepartment(props.id);
+  // we are creating a new Users.
+  const { data: usersData, status: usersStatus } = useUsers(props.id);
 
-  // If we are updating an existing Department
-  // don't show modal until Department data is fetched.
-  if (props.id && departmentStatus !== "success") {
+  // If we are updating an existing Users
+  // don't show modal until Users data is fetched.
+  if (props.id && usersStatus !== "success") {
     return null;
   }
 
@@ -44,8 +44,8 @@ function EditDepartmentModal(props) {
     setPending(true);
 
     const query = props.id
-      ? updateDepartment(props.id, data)
-      : createDepartment({ owner: auth.user.id, section: props.section, ...data });
+      ? updateUsers(props.id, data)
+      : createUsers({ owner: auth.user.id, section: props.section, ...data });
 
     query
       .then(() => {
@@ -68,7 +68,7 @@ function EditDepartmentModal(props) {
       <DialogTitle>
         {props.id && <>Update</>}
         {!props.id && <>Create</>}
-        {` `}Department
+        {` `}Users
       </DialogTitle>
       <DialogContent className={classes.content}>
         {formAlert && (
@@ -78,45 +78,28 @@ function EditDepartmentModal(props) {
         )}
 
         <form onSubmit={handleSubmit(onSubmit)}>
-
-            <Grid item={true} xs={12}> 
-              <TextField
-                variant="outlined"
-                select
-                label="Label(s)"
-                // value={label}
-                // onChange={event => setFormDetails({ ...formDetails, [label]: event.target.value})}
-                defaultValue={departmentData && departmentData.name}
-                error={errors.name ? true : false}
-                helperText={errors.name && errors.name.message}
-                fullWidth={true}
-                autoFocus={true}
-                inputRef={register}
-              >
-                {[
-                  { label: "vanilla" }, 
-                  { label: "node" }, 
-                  { label: "noSql" }, 
-                  { label: "sql" }, 
-                  { label: "react" }, 
-                  { label: "python" }, 
-                  { label: "shopify" }, 
-                  { label: "wordpress" }
-                ].map((option, i) => (
-                  <MenuItem key={i} value={option.label}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </Grid>
           <Grid container={true} spacing={3}>
             <Grid item={true} xs={12}>
               <TextField
                 variant="outlined"
                 type="text"
-                label="Title"
-                name="title"
-                defaultValue={departmentData && departmentData.name}
+                label="Employee Company"
+                name="company"
+                defaultValue={usersData && usersData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Email"
+                name="email"
+                defaultValue={usersData && usersData.name}
                 error={errors.name ? true : false}
                 helperText={errors.name && errors.name.message}
                 fullWidth={true}
@@ -124,6 +107,134 @@ function EditDepartmentModal(props) {
                 inputRef={register({
                   required: "Please enter a title",
                 })}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Accounts"
+                name="accounts"
+                defaultValue={usersData && usersData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="First Name"
+                name="firstName"
+                defaultValue={usersData && usersData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register({
+                  required: "Please enter a title",
+                })}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Middle Name"
+                name="middleName"
+                defaultValue={usersData && usersData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Last Name"
+                name="lastName"
+                defaultValue={usersData && usersData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="phone"
+                label="Contact No."
+                name="number"
+                defaultValue={usersData && usersData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Role"
+                name="role"
+                defaultValue={usersData && usersData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Position"
+                name="position"
+                defaultValue={usersData && usersData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Users"
+                name="Users"
+                defaultValue={usersData && usersData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item={true} xs={12}>
+              <TextField
+                variant="outlined"
+                type="text"
+                label="Date of Job"
+                name="jobDate"
+                defaultValue={usersData && usersData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
               />
             </Grid>
             <Grid item={true} xs={12}>
@@ -146,4 +257,4 @@ function EditDepartmentModal(props) {
   );
 }
 
-export default EditDepartmentModal;
+export default EditUsersModal;
