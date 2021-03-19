@@ -33,6 +33,7 @@ function DashboardSection(props) {
     [];
   
 
+    console.info(auth.user.role)
   return (
     <Section
       bgColor={props.bgColor}
@@ -63,7 +64,7 @@ function DashboardSection(props) {
           </Box>
         )}
 
-        {auth.user.role === "admin" || auth.user.role === "owner" && <AdminDashboard sections={sections} /> }
+        {(auth.user.role === "admin" || auth.user.role === "owner") && <AdminDashboard sections={sections} /> }
         {auth.user.role === "hr" && <HrDashboard sections={sections}  /> }
         {auth.user.role === "employee" && <EmployeeDashboard sections={sections}  /> }
 
