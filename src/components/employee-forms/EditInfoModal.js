@@ -157,7 +157,7 @@ function EditInfoModal(props) {
             <Grid item={true} xs={12}>
               <TextField
                 variant="outlined"
-                type="text"
+                type="phone"
                 label="Contact No"
                 name="contact"
                 defaultValue={infoData && infoData.name}
@@ -171,7 +171,7 @@ function EditInfoModal(props) {
             <Grid item={true} xs={12}>
               <TextField
                 variant="outlined"
-                type="text"
+                type="email"
                 label="Email"
                 name="email"
                 defaultValue={infoData && infoData.name}
@@ -185,7 +185,7 @@ function EditInfoModal(props) {
             <Grid item={true} xs={12}>
               <TextField
                 variant="outlined"
-                type="text"
+                type="number"
                 label="PANcard"
                 name="pan"
                 defaultValue={infoData && infoData.name}

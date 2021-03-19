@@ -11,7 +11,7 @@ Deployed using Netlify
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba146e5e-ac58-4079-958b-6b9eb03cec80/deploy-status)](https://app.netlify.com/sites/fire-react-employee-management/deploys)
 
-Inspiration came from this repo --> https://github.com/fenil29/employee-management-system-frontend-react
+Inspiration came from this repo ( Found it just searching Github for relevant concept. ) --> https://github.com/fenil29/employee-management-system-frontend-react
 
 
 ### to dos
@@ -24,7 +24,7 @@ Inspiration came from this repo --> https://github.com/fenil29/employee-manageme
 - Allow for new users to be created. Build welcome screen with mock welcome wizard/flow.
 
 6. ~~Update landing page to SignInSide landing page~~
-7. ~~Hide navbar on landing age, and show on rest of site~~
+7. ~~Hide navbar on landing page, and show on rest of site~~
 ---> *SOLVED* reference: https://docs.divjoy.com/Hide-Navbar-and-Footer-on-some-pages-4b6697d1b70a410884f5b42a7b1ecb20
 8. Update all forms to include enchanced UI by featuring MUI custom pickers etc..
 

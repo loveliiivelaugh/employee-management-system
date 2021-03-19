@@ -108,6 +108,18 @@ function EditDependentsModal(props) {
               />
             </Grid>
             <Grid item={true} xs={12}>
+
+              <TextField
+                id="date"
+                label="DOB"
+                type="date"
+                defaultValue="2017-05-24"
+                className={classes.textField}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+{/* 
               <TextField
                 variant="outlined"
                 type="text"
@@ -120,6 +132,8 @@ function EditDependentsModal(props) {
                 autoFocus={true}
                 inputRef={register}
               />
+              
+              */}
             </Grid>
             <Grid item={true} xs={12}>
               <Button

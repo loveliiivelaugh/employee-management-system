@@ -83,7 +83,7 @@ function EditLeaveApplicationsModal(props) {
               <TextField
                 variant="outlined"
                 select
-                label="Select your option"
+                label="Leave type"
                 defaultValue={leaveApplicationsData && leaveApplicationsData.name}
                 error={errors.name ? true : false}
                 helperText={errors.name && errors.name.message}
@@ -108,6 +108,17 @@ function EditLeaveApplicationsModal(props) {
               </TextField>
             </Grid>
             <Grid item={true} xs={12}>
+
+            <TextField
+                label="To Date"
+                type="toDate"
+                defaultValue="2017-05-24"
+                className={classes.textField}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+{/* 
               <TextField
                 variant="outlined"
                 type="text"
@@ -120,8 +131,20 @@ function EditLeaveApplicationsModal(props) {
                 autoFocus={true}
                 inputRef={register}
               />
+               */}
             </Grid>
             <Grid item={true} xs={12}>
+
+            <TextField
+                label="fromDate"
+                type="fromDate"
+                defaultValue="2017-05-24"
+                className={classes.textField}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+{/* 
               <TextField
                 variant="outlined"
                 type="text"
@@ -134,8 +157,10 @@ function EditLeaveApplicationsModal(props) {
                 autoFocus={true}
                 inputRef={register}
               />
+               */}
             </Grid>
             <Grid item={true} xs={12}>
+{/* 
               <TextField
                 variant="outlined"
                 type="text"
@@ -148,6 +173,33 @@ function EditLeaveApplicationsModal(props) {
                 autoFocus={true}
                 inputRef={register}
               />
+               */}
+              <TextField
+                variant="outlined"
+                select
+                label="Reason for leaving"
+                defaultValue={leaveApplicationsData && leaveApplicationsData.name}
+                error={errors.name ? true : false}
+                helperText={errors.name && errors.name.message}
+                fullWidth={true}
+                autoFocus={true}
+                inputRef={register}
+              >
+                {[
+                  { label: "vanilla" }, 
+                  { label: "node" }, 
+                  { label: "noSql" }, 
+                  { label: "sql" }, 
+                  { label: "react" }, 
+                  { label: "python" }, 
+                  { label: "shopify" }, 
+                  { label: "wordpress" }
+                ].map((option, i) => (
+                  <MenuItem key={i} value={option.label}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
             </Grid>
             <Grid item={true} xs={12}>
               <Button
