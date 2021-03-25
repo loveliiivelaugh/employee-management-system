@@ -3,9 +3,9 @@
 
 ## Description
 
+--
+
 ![Screenshot](/public/employee-management=system-screenshot.png)
-
-
 ## Table of Contents
 
 1. ![Introduction](#top)
@@ -14,6 +14,9 @@
 2. ![To do's]()
 2. ![Extra's]()
 ## Instructions
+
+--
+## Deployment
 
  ---> [Live URL](https://fire-react-employee-management.netlify.app)
 
