@@ -1,20 +1,34 @@
 # Employee Management System
-### React MaterialUI Firebase
+### [React]() [MaterialUI]() [Firebase]()
 
-Instructions and details coming soon.. I need to commit more so I am starting with this will update frequently.
+## Description
 
-~~Live URL coming sooon!~~
+![Screenshot](/public/employee-management=system-screenshot.png)
 
-Live URL ---> https://fire-react-employee-management.netlify.app
 
-Deployed using Netlify
+## Table of Contents
+
+1. ![Introduction](#top)
+2. ![Instructions]()
+2. ![Credit's]()
+2. ![To do's]()
+2. ![Extra's]()
+## Instructions
+
+ ---> [Live URL](https://fire-react-employee-management.netlify.app)
+
+Deployed using [Netlify](www.netlify.com)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba146e5e-ac58-4079-958b-6b9eb03cec80/deploy-status)](https://app.netlify.com/sites/fire-react-employee-management/deploys)
 
-Inspiration came from this repo ( Found it just searching Github for relevant concept. ) --> https://github.com/fenil29/employee-management-system-frontend-react
+## Credits
+
+#### Inspiration
+
+Inspiration came from this repo ( Found it just searching Github for relevant concept. ) --> [fenil29/employee-management-system-frontend-react](https://github.com/fenil29/employee-management-system-frontend-react)
 
 
-### to dos
+## To Dos
 1. ~~Update all forms to reflect dataa required in tables~~
 2. ~~Deploy a live site~~
 3. ~~Set up cd/ci~~

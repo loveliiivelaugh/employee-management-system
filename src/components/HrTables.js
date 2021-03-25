@@ -119,7 +119,7 @@ export default function Orders(props) {
         </TableBody>
       </Table>
       <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
+        See more {props.activeSection.name}'s
       </Link>
 
       {creatingProject && (props.activeSection.name === "User") &&

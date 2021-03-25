@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
   spacer: {
     flexGrow: 1,
   },
+
 }));
 
 function Navbar(props) {
@@ -42,6 +43,7 @@ function Navbar(props) {
   const darkMode = useDarkMode();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [menuState, setMenuState] = useState(null);
+  const [toggle, setToggle] = useState(false);
 
   // Use inverted logo if specified
   // and we are in dark mode
@@ -64,8 +66,12 @@ function Navbar(props) {
         <Container disableGutters={true}>
           <Toolbar>
             <Link to="/">
-              <img src={logo} alt="Logo" className={classes.logo} />
+              {toggle ?
+                <img src={logo} alt="Logo" className={classes.logo} /> :
+                ''
+              }
             </Link>
+            <h1>EMPLOYEES</h1>
             <div className={classes.spacer} />
             <Hidden smUp={true} implementation="css">
               <IconButton
