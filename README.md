@@ -5,7 +5,7 @@
 
 --
 
-![Screenshot](/public/employee-management=system-screenshot.png)
+![Screenshot](/public/screenshot.png)
 ## Table of Contents
 
 1. ![Introduction](#top)
