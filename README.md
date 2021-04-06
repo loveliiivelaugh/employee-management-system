@@ -1,5 +1,5 @@
 # Employee Management System
-### [React](https://reactjs.org/) [MaterialUI](https://material-ui.com) [Firebase](https://firebase.google.com/)
+### [React](https://reactjs.org/) - [MaterialUI](https://material-ui.com) - [Firebase](https://firebase.google.com/)
 
 ## Description
 
@@ -8,9 +8,9 @@ A sample employee management system built to simplify the organization of admini
 ![Screenshot](/public/screenshot.png)
 ## Deployment
 
- ---> [Live URL](https://fire-react-employee-management.netlify.app)
-
 Deployed using [Netlify](www.netlify.com)
+
+[Live URL](https://fire-react-employee-management.netlify.app)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba146e5e-ac58-4079-958b-6b9eb03cec80/deploy-status)](https://app.netlify.com/sites/fire-react-employee-management/deploys)
 
