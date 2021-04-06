@@ -1,21 +1,11 @@
 # Employee Management System
-### [React]() [MaterialUI]() [Firebase]()
+### [React](https://reactjs.org/) [MaterialUI](https://material-ui.com) [Firebase](https://firebase.google.com/)
 
 ## Description
 
---
+A sample employee management system built to simplify the organization of administrative data respective to the end user. Application features authenticated routing based on user roles and permissions. Built with React.js, MaterialUI for the user interface, Firebase for user authentication, Firestore to persist data in a noSql database, and Netlify for hosting.
 
 ![Screenshot](/public/screenshot.png)
-## Table of Contents
-
-1. ![Introduction](#top)
-2. ![Instructions]()
-2. ![Credit's]()
-2. ![To do's]()
-2. ![Extra's]()
-## Instructions
-
---
 ## Deployment
 
  ---> [Live URL](https://fire-react-employee-management.netlify.app)
